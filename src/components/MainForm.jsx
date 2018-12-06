@@ -10,7 +10,7 @@ import Charging from './Charging/Charging';
 
 class MainForm extends Component {
     state = {
-        step: 8,
+        step: 1,
         firstName: '',
         lastName: '',
         email: '',
@@ -49,33 +49,29 @@ class MainForm extends Component {
         const { firstName, lastName, email, age, city, country } = this.state;
         const values = { firstName, lastName, email, age, city, country };
         const syncdevice = this.state.syncdevice;
+        
         switch(step) {
         case 1:
-            return <Home 
-                    start={this.start}
-                    />
-        case 2:
-            return <UserDetails 
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    values={values}
-                    />
-        case 3:
-            return <Success 
-                    />
-        case 4:
-            return <ToggleSwitchList/>
-
+            return <Home  start={this.start}/>
+            case 2:
+            return <SyncDevices 
+                    checked={syncdevice} 
+                    handleChange = {this.handleChange} 
+                    next = {this.nextStep}
+                    prev = {this.prevStep}/>
+            case 3:
+            return <SyncApps 
+                    next={this.nextStep} 
+                    prev = {this.prevStep}/>
+            case 4: 
+            return <Charging
+                    next = {this.nextStep}
+                    prev = {this.prevStep} />
             case 5:
-            return <SyncDevices checked={syncdevice} handleChange = {this.handleChange}/>
-            case 6:
-            return <Switchbar />
-            case 7:
-            return <SyncApps next={this.nextStep} />
-            case 8: 
-            return <Charging />
-        }
+            return <Success />
+            
+        
+    }
     }
 }
 

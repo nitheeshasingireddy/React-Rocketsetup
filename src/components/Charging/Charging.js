@@ -36,13 +36,11 @@ class Charging extends Component {
   <div class="page-header-content p-0">
     <div class="page-title d-flex justify-content-between">
       <h4>
-        <i class="icon-arrow-left12 ml-1" ></i>
-        Apps
+      <span onClick={(this.props.prev)} className="icon-arrow-left12 ml-1">Apps </span> 
       </h4>
       <h4><span class="text-center left-auto">My CX727</span></h4>
       <h4>
-        VoiceAudio
-        <i class="icon-arrow-right13 mr-1"></i>
+        <span className="icon-arrow-left12 ml-1">VoiceAudio </span> 
       </h4>
     </div>
   </div>

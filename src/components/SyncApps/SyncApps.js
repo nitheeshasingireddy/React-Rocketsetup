@@ -30,13 +30,11 @@ class SyncApps extends Component {
     <div className="page-title d-flex justify-content-between">
       <h4>
         
-        Menu
-        <i className="icon-arrow-left12 ml-1" onClick = {(this.props.next)}></i>
+        <span onClick={(this.props.prev)} className="icon-arrow-left12 ml-1">Sync device </span> 
       </h4>
       <h4><span className="text-center left-auto">My CX727</span></h4>
       <h4>
-        Device
-        <i className="icon-arrow-right13 mr-1" onClick = {(this.props.next)} ></i>
+        <span onClick={(this.props.next)} className="icon-arrow-left12 ml-1">Charging </span> 
       </h4>
     </div>
   </div>

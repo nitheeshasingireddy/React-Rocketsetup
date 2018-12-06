@@ -24,10 +24,7 @@ class SyncDevices extends Component {
   toggleNotifications = ({ enabled }) => {
     this.setState({ enabled: !this.state.enabled });
   }
-  saveAndContinue = (e) => {
-    e.preventDefault()
-    this.props.nextStep()
-  }
+  
   render() {
     return (
     <div className = "syncdevices">
@@ -35,13 +32,13 @@ class SyncDevices extends Component {
         <div className="page-header-content p-0">
           <div className="page-title d-flex justify-content-between">
             <h4>
-            <Button onClick={(this.saveAndContinue)} className="icon-arrow-left12 ml-1"> </Button>   
-              Menu
+            <span onClick={(this.props.prev)} className="icon-arrow-left12 ml-1">Menu </span>   
+              
             </h4>
             <h4><span className="text-center left-auto">My CX727</span></h4>
             <h4>
-              Apps
-              <Button onClick={(this.saveAndContinue)} className="icon-arrow-right13 mr-1"> </Button>
+              
+              <span onClick = {(this.props.next)} className="icon-arrow-right13 mr-1"> Apps</span>
             </h4>
           </div>
         </div>
