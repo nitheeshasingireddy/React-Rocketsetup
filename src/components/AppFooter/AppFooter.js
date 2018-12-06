@@ -10,7 +10,7 @@ class AppFooter extends Component {
       }
       render() {
         return (
-  <div className="Footer">
+  <div className="Footer" style={{backgroundColor:'white'}}>
     <Navbar fixedBottom>
       <Navbar.Header>
         <Navbar.Brand>

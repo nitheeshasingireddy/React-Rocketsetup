@@ -5,16 +5,19 @@ import Home from './Home/Home';
 import ToggleSwitchList from './ToggleSwitchList/ToggleSwitchList';
 import Switchbar from './Switchbar';
 import SyncDevices from './SyncDevices/SyncDevices';
+import SyncApps from './SyncApps/SyncApps';
+import Charging from './Charging/Charging';
 
 class MainForm extends Component {
     state = {
-        step: 5,
+        step: 8,
         firstName: '',
         lastName: '',
         email: '',
         age: '',
         city: '',
-        country: ''
+        country: '',
+        syncdevice:false
     }
 
     nextStep = () => {
@@ -45,6 +48,7 @@ class MainForm extends Component {
         const {step} = this.state;
         const { firstName, lastName, email, age, city, country } = this.state;
         const values = { firstName, lastName, email, age, city, country };
+        const syncdevice = this.state.syncdevice;
         switch(step) {
         case 1:
             return <Home 
@@ -64,7 +68,13 @@ class MainForm extends Component {
             return <ToggleSwitchList/>
 
             case 5:
-            return <SyncDevices />
+            return <SyncDevices checked={syncdevice} handleChange = {this.handleChange}/>
+            case 6:
+            return <Switchbar />
+            case 7:
+            return <SyncApps next={this.nextStep} />
+            case 8: 
+            return <Charging />
         }
     }
 }
