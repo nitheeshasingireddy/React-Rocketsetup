@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PageHeader, Navbar, Glyphicon} from 'react-bootstrap';
+import { Glyphicon} from 'react-bootstrap';
 import car1 from '../../Images/car1.png';
 import AppFooter from '../AppFooter/AppFooter';
 
@@ -26,10 +26,9 @@ class Home extends Component {
         console.log(label, 'is checked');
       }
       render() {
-        const { label } = "Connect devices";
         return (
           <div className = "home">
-          <div className="page-header page-header-light">
+          <div className="page-header-light">
             <div className="page-header-content">
               <div className="page-title d-flex justify-content-between">
                 <h4></h4>
@@ -41,11 +40,11 @@ class Home extends Component {
             </div>
             <div>
               <img className='img-fluid' alt='icon' src={car1}/>
-                <h1 class="p-4 text-center mb-0 font-weight-bold">
+                <h1 className="p-4 text-center mb-0 font-weight-bold">
                   Personalize your CX727
                 </h1>
             </div>
-<div class="content card-group-control card-group-control-right">
+<div className="content card-group-control card-group-control-right">
   <div className="card mb-2">
     <div className="card-header card-title">
       <h4 className="card-title">
@@ -54,7 +53,7 @@ class Home extends Component {
     </div>
   </div>
 </div>
-<div class="content card-group-control card-group-control-right">
+<div className="content card-group-control card-group-control-right">
   <div className="card mb-2">
     <div className="card-header card-title">
     <h4 className="card-title">
@@ -63,7 +62,7 @@ class Home extends Component {
     </div>
   </div>
 </div>
-<div class="content card-group-control card-group-control-right">
+<div className="content card-group-control card-group-control-right">
   <div className="card mb-2">
     <div className="card-header">
       <h4 className="card-title">
@@ -72,7 +71,7 @@ class Home extends Component {
       </h4>
     </div>
   </div>
-</div>
+ </div>
 <AppFooter />
 </div>
         );

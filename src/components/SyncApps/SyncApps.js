@@ -9,15 +9,36 @@ import './SyncApps.css';
 
 class SyncApps extends Component {
     state = {
-        checked: false,
+        spotify: this.props.values.spotify,
+        alexa: this.props.values.alexa,
+        target: this.props.values.target,
+        pandora: this.props.values.pandora,
+        ihome: this.props.values.ihome,
         checked1: false
       }
-      handleChange = () => {
-        this.setState({ checked: !this.state.checked });
-        //this.props.handleChange('syncdevice');
+      handleSpotify = () => {
+        this.setState({ spotify: !this.state.spotify });
+        this.props.handleChange('spotify', !this.state.spotify);
       }
-      handleChange1 =() => {
-          this.setState({ checked1: !this.state.checked1});
+      handleAlexa =() => {
+          this.setState({ alexa: !this.state.alexa});
+          this.props.handleChange('alexa', !this.state.alexa);
+      }
+      handleTarget = () => {
+        this.setState({ target: !this.state.target });
+        this.props.handleChange('target', !this.state.target);
+      }
+      handlePandora = () => {
+        this.setState({ pandora: !this.state.pandora });
+        this.props.handleChange('pandora', !this.state.pandora);
+      }
+      handleIHome = () => {
+        this.setState({ ihome: !this.state.ihome });
+        this.props.handleChange('ihome', !this.state.ihome);
+      }
+      handleChange1 = () => {
+        this.setState({ checked1: !this.state.checked1 });
+        // this.props.handleChange('ihome', !this.state.ihome);
       }
 
     render() { 
@@ -25,7 +46,7 @@ class SyncApps extends Component {
         return (
             <div className="SyncApps">
 
-<div className="page-header page-header-light">
+<div className="page-header-light">
   <div className="page-header-content p-0">
     <div className="page-title d-flex justify-content-between">
       <h4>
@@ -59,8 +80,8 @@ class SyncApps extends Component {
             <h3 className="font-weight-semibold mb-0">Spotify</h3>
             <span className="text-muted">
             <Switch
-                    onChange ={this.handleChange}
-                    checked ={this.state.checked}
+                    onChange ={this.handleSpotify}
+                    checked ={this.state.spotify}
                     className="react-switch"
                     uncheckedIcon={
                       <div
@@ -84,7 +105,7 @@ class SyncApps extends Component {
             </span>
           </div>
         </div>
-        { enabled && (
+        { this.state.spotify && (
         <div className="text-center mt-2" >
           <div className="form-group mb-1">
             <input type="text" className="form-control" placeholder="username" />
@@ -194,8 +215,8 @@ class SyncApps extends Component {
             <h3 className="font-weight-semibold mb-0">Alexa</h3>
             <span className="text-muted">
             <Switch
-                    onChange ={this.handleChange1}
-                    checked ={this.state.checked1}
+                    onChange ={this.handleAlexa}
+                    checked ={this.state.alexa}
                     className="react-switch"
                     uncheckedIcon={
                       <div
@@ -234,8 +255,8 @@ class SyncApps extends Component {
             <h3 className="font-weight-semibold mb-0">Target</h3>
             <span className="text-muted">
             <Switch
-                    onChange ={this.handleChange1}
-                    checked ={this.state.checked1}
+                    onChange ={this.handleTarget}
+                    checked ={this.state.target}
                     className="react-switch"
                     uncheckedIcon={
                       <div
@@ -273,8 +294,8 @@ class SyncApps extends Component {
             <h3 className="font-weight-semibold mb-0">iHome</h3>
             <span className="text-muted">
             <Switch
-                    onChange ={this.handleChange1}
-                    checked ={this.state.checked1}
+                    onChange ={this.handleIHome}
+                    checked ={this.state.ihome}
                     className="react-switch"
                     uncheckedIcon={
                       <div
@@ -312,8 +333,8 @@ class SyncApps extends Component {
             <h3 className="font-weight-semibold mb-0">Pandora</h3>
             <span className="text-muted">
             <Switch
-                    onChange ={this.handleChange1}
-                    checked ={this.state.checked1}
+                    onChange ={this.handlePandora}
+                    checked ={this.state.pandora}
                     className="react-switch"
                     uncheckedIcon={
                       <div

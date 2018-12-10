@@ -24,7 +24,7 @@ class AppHeader extends Component {
         </Navbar.Brand>
         {/* <Navbar.Toggle /> */}
       </Navbar.Header>
-      <Navbar.Header pullRight>
+      <Navbar.Header>
         <Navbar.Brand>
           <a href="##"><Glyphicon glyph="bell" /></a>
         </Navbar.Brand>

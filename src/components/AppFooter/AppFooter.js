@@ -10,7 +10,8 @@ class AppFooter extends Component {
       }
       render() {
         return (
-  <div className="Footer" style={{backgroundColor:'white'}}>
+  <div className="footer" style={{backgroundColor:'white'}}>
+  {/* <div className="page-header-light"> */}
     <Navbar fixedBottom>
       <Navbar.Header>
         <Navbar.Brand>
@@ -24,19 +25,20 @@ class AppFooter extends Component {
         </Navbar.Brand>
         {/* <Navbar.Toggle /> */}
       </Navbar.Header>
-      <Navbar.Header pullRight>
+      <Navbar.Header >
         <Navbar.Brand>
           <a href="##"><Glyphicon glyph="envelope" /></a>
         </Navbar.Brand>
         {/* <Navbar.Toggle /> */}
       </Navbar.Header>
-      <Navbar.Header pullRight>
+      <Navbar.Header >
         <Navbar.Brand>
           <a href="##"><Glyphicon glyph="search" /></a>
         </Navbar.Brand>
         {/* <Navbar.Toggle /> */}
       </Navbar.Header>
     </Navbar>
+    {/* </div> */}
   </div>
     );
   }

@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import AppHeader from './components/AppHeader/AppHeader';
-
-import './App.css';
 import AppFooter from './components/AppFooter/AppFooter';
-import Home from './components/Home/Home';
 import MainForm from './components/MainForm';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <body style={{backgroundColor:'#f5f5f5'}}>
-      <div className="App">
+      <div className="App" style={{backgroundColor:'#f5f5f5'}}>
       <div className="navbar navbar-dark fixed-top">
       <AppHeader />
       </div>
@@ -19,7 +16,6 @@ class App extends Component {
         <AppFooter />
         </div>
       </div>
-      </body>
       
     );
   }
