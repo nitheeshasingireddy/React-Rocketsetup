@@ -10,9 +10,8 @@ class AppFooter extends Component {
       }
       render() {
         return (
-  <div className="footer" style={{backgroundColor:'white'}}>
-  {/* <div className="page-header-light"> */}
-    <Navbar fixedBottom>
+  <div className="footer">
+    <Navbar fixedBottom style ={{backgroundColor:"white"}}>
       <Navbar.Header>
         <Navbar.Brand>
           <a href="##"><Glyphicon glyph="home" /></a>
@@ -38,8 +37,7 @@ class AppFooter extends Component {
         {/* <Navbar.Toggle /> */}
       </Navbar.Header>
     </Navbar>
-    {/* </div> */}
-  </div>
+    </div>
     );
   }
 }

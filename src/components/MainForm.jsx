@@ -8,12 +8,14 @@ import Charging from './Charging/Charging';
 class MainForm extends Component {
     state = {
         step: 1,
+        preference: { 
         spotify: false,
         alexa: false,
         target: false,
         pandora: false,
         ihome: false,
-        syncdevice:false
+        syncdevice:false,
+        }
     }
 
     nextStep = () => {
@@ -37,21 +39,26 @@ class MainForm extends Component {
     }
 
     handleChange = (input,value)=> {
-        console.log(value);
-        console.log(input);
-        this.setState({ [input] :value})
+        let preference = {...this.state.preference}; 
+        preference[input] = value;                  
+        this.setState({preference});
+        
+    }
+    save = () =>
+    {
+        console.log(this.state);
     }
     
     render(){
         const {step} = this.state;
-        const syncdevice = this.state.syncdevice;
-        const { spotify, alexa, target, pandora, ihome } = this.state;
+        const syncdevice = this.state.preference.syncdevice;
+        const { spotify, alexa, target, pandora, ihome } = this.state.preference;
         const values = { spotify, alexa, target, pandora, ihome };
         
         
         switch(step) {
         case 1:
-            return <Home  start={this.start}/>
+            return <Home  start={this.start} save={this.save}/>
             case 2:
             return <SyncDevices 
                     checked={syncdevice} 

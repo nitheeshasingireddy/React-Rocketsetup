@@ -7,15 +7,20 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{backgroundColor:'#f5f5f5'}}>
+      <body style={{backgroundColor:'#f5f5f5'}}>
+      <div className="App" >
+
       <div className="navbar navbar-dark fixed-top">
       <AppHeader />
       </div>
         <MainForm />
-        <div className="navbar navbar-light fixed-bottom">
-        <AppFooter />
+        {/* <div className="navbar navbar-light fixed-bottom"> */}
+        <div className="navbar"> 
+        <AppFooter/>
         </div>
+        {/* </div> */}
       </div>
+      </body>
       
     );
   }

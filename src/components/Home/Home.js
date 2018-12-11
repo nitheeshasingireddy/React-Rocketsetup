@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Glyphicon} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import car1 from '../../Images/car1.png';
 import AppFooter from '../AppFooter/AppFooter';
 
@@ -33,7 +34,7 @@ class Home extends Component {
               <div className="page-title d-flex justify-content-between">
                 <h4></h4>
                 <h4><span className="text-center left-auto">My CX727</span></h4>
-                <h4><a href="##"><Glyphicon glyph="save" /></a></h4>
+                <h4><Button onClick={this.props.save}><Glyphicon glyph="save" /></Button></h4>
               </div>
             </div>
             
@@ -73,6 +74,7 @@ class Home extends Component {
   </div>
  </div>
 <AppFooter />
+
 </div>
         );
       }
