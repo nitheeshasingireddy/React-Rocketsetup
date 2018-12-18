@@ -6,6 +6,7 @@ import alexa from '../../Images/alexa.png';
 import apps from '../../Images/apps.png';
 import spotify from '../../Images/spotify.png';
 import './SyncApps.css';
+import AppFooter from '../AppFooter/AppFooter';
 
 class SyncApps extends Component {
     state = {
@@ -16,8 +17,13 @@ class SyncApps extends Component {
         ihome: this.props.values.ihome,
         checked1: false
       }
+      start = (param )=> e => {
+        e.preventDefault();
+        this.props.start(param);
+      }
       handleSpotify = () => {
         this.setState({ spotify: !this.state.spotify });
+        // console.log("spotify",this.state.spotify);
         this.props.handleChange('spotify', !this.state.spotify);
       }
       handleAlexa =() => {
@@ -362,6 +368,7 @@ class SyncApps extends Component {
     </div>
   </div>
 </div>
+<AppFooter start = {this.start}/>
 </div>
         );
     }

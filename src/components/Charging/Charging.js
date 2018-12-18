@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Switch from 'react-switch';
 import charging from '../../Images/charging.jpeg';
+import AppFooter from '../AppFooter/AppFooter';
 
 class Charging extends Component {
     state = {
@@ -10,6 +11,10 @@ class Charging extends Component {
         stationChecked: false
 
       }
+      start = (param )=> e => {
+        e.preventDefault();
+        this.props.start(param);
+      };
       smartCharge = () => {
         this.setState({ chargeChecked: !this.state.chargeChecked });
         //this.props.handleChange('syncdevice');
@@ -35,7 +40,7 @@ class Charging extends Component {
       </h4>
       <h4><span className="text-center left-auto">My CX727</span></h4>
       <h4>
-        <span className="icon-arrow-left12 ml-1">VoiceAudio </span> 
+        <span onClick={(this.props.next)} className="icon-arrow-left12 ml-1">VoiceAudio </span> 
       </h4>
     </div>
   </div>
@@ -185,6 +190,7 @@ class Charging extends Component {
 
   </div>
 </div> 
+<AppFooter start = {this.start}/>
 </div>
 ); 
 }

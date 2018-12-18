@@ -3,6 +3,8 @@ import placeholder from '../../Images/placeholder.jpg';
 import Switch from "react-switch";
 import './SyncDevices.css';
 
+import AppFooter from '../AppFooter/AppFooter';
+
 class SyncDevices extends Component {
   state = {
     checked: this.props.checked,
@@ -10,6 +12,10 @@ class SyncDevices extends Component {
     checked2: false,
     checked3: false
   }
+  start = (param )=> e => {
+    e.preventDefault();
+    this.props.start(param);
+  };
   handleChange = e => {
     // e.preventDefault();
     console.log("sync devices");
@@ -214,6 +220,7 @@ class SyncDevices extends Component {
           </div>
         </div>
       </div>
+      <AppFooter start = {this.start}/>
       </div>
     );
   }

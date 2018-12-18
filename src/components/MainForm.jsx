@@ -4,12 +4,13 @@ import Home from './Home/Home';
 import SyncDevices from './SyncDevices/SyncDevices';
 import SyncApps from './SyncApps/SyncApps';
 import Charging from './Charging/Charging';
+import VoiceAudio from './Voice_Audio/VoiceAudio';
 
 class MainForm extends Component {
     state = {
-        step: 1,
+        step: this.props.setStep ,
         preference: { 
-        spotify: false,
+        spotify: true,
         alexa: false,
         target: false,
         pandora: false,
@@ -42,6 +43,7 @@ class MainForm extends Component {
         let preference = {...this.state.preference}; 
         preference[input] = value;                  
         this.setState({preference});
+        // console.log(input,": ",value);
         
     }
     save = () =>
@@ -64,18 +66,26 @@ class MainForm extends Component {
                     checked={syncdevice} 
                     handleChange = {this.handleChange} 
                     next = {this.nextStep}
-                    prev = {this.prevStep}/>
+                    prev = {this.prevStep}
+                    start = {this.start}/>
             case 3:
             return <SyncApps 
                     next={this.nextStep} 
                     handleChange = {this.handleChange} 
                     prev = {this.prevStep}
-                    values = {values} />
+                    values = {values}
+                    start = {this.start} />
             case 4: 
             return <Charging
                     next = {this.nextStep}
-                    prev = {this.prevStep} />
+                    prev = {this.prevStep}
+                    start = {this.start} />
             case 5:
+            return <VoiceAudio
+                    next = {this.nextStep}
+                    prev = {this.prevStep}
+                    start = {this.start} />
+            case 6:
             return <Success />
             default:
                 return <Home start = {this.start} />
